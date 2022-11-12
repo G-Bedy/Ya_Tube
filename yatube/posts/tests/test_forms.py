@@ -174,7 +174,7 @@ class CommentCreateFormTests(TestCase):
         )
         self.assertTrue(
             Comment.objects.filter(
-                text='Текст тестового комментария',
+                text=form_data['text'],
                 author=self.user,
                 post=self.post.id
             ).exists(),
