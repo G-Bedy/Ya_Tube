@@ -7,6 +7,7 @@ User = get_user_model()
 
 
 class Post(CreatedModel):
+    id = models.BigAutoField(primary_key=True)
     text = models.TextField(
         verbose_name='Текст поста',
         help_text='Введите текст поста',
@@ -43,6 +44,7 @@ class Post(CreatedModel):
 
 
 class Group(models.Model):
+    id = models.BigAutoField(primary_key=True)
     title = models.CharField(
         max_length=200,
         verbose_name='Название группы',
@@ -68,6 +70,7 @@ class Group(models.Model):
 
 
 class Comment(CreatedModel):
+    id = models.BigAutoField(primary_key=True)
     post = models.ForeignKey(
         'Post',
         on_delete=models.CASCADE,
@@ -99,6 +102,7 @@ class Comment(CreatedModel):
 
 
 class Follow(models.Model):
+    id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
